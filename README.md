@@ -1,3 +1,3 @@
-# C_Cpp Advance
+# C/C++ Advance & Algorirhm
 
 ## Huỳnh Minh Thuận
