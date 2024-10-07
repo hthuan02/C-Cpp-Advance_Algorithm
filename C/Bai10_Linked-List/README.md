@@ -42,6 +42,89 @@
 
 **Ứng dụng: Liked List giúp quản lý danh sách tốt hơn mảng.**
 
+# Các hàm thường sử dụng trong danh sách liên kết(Liked List)
+
+## 1. Hàm thêm 1 node ở cuối LIST
+void push_back(Node **array, int value)
+{
+    Node *temp = createNode(value);
+
+    if (*array == NULL)
+    {
+        temp = *array;
+    }
+
+    else
+    {
+        Node *p;
+        while (p->next != NULL)
+        {
+            p = p->next;
+        }
+        p->next = temp;
+    }
+}    
+## 2. Hàm xóa 1 node ở cuối LIST
+void pop_back(Node **array)
+{
+    Node *p = *array;
+    Node *temp;
+    int i = 0;
+
+    while (p->next != NULL)
+    {
+        p = p->next;
+        i++;
+    }
+    free(p);
+
+    int j;
+    temp = *array;
+    for (j = 0; j < i - 1; j++)
+    {
+        temp = temp->next;
+    }
+    temp->next = NULL;
+}
+## 3. Hàm thêm 1 node ở đầu LIST
+void push_front(Node **array, int value)
+{
+    Node *new_node = createNode(value);
+
+    new_node->next = *array;
+    *array = new_node;
+}
+## 4. Hàm xóa 1 node ở đầu LIST
+void pop_front(Node **array)
+{
+    if (*array == NULL)
+    {
+        return;
+    }
+    Node *temp = *array;
+    *array = (*array)->next;
+    free(temp);
+}
+## 5. Hàm thêm 1 node vị trí bất kỳ trong LIST
+void insert(Node **array, int value, int pos)
+{
+    Node *new_node = createNode(value);
+    Node *p = *array;
+    int index = 0;
+
+    while (p->next != NULL && index != pos - 1)
+    {
+        p = p->next;
+        index++;
+    }
+
+    if (index == pos - 1)
+    {
+        new_node->next = (p->next);
+        p->next = new_node;
+    }
+}
+## 6. Hàm xóa 1 node vị trí bất kỳ trong LIST
 
 
 
