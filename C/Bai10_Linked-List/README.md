@@ -125,7 +125,41 @@ void insert(Node **array, int value, int pos)
     }
 }
 ## 6. Hàm xóa 1 node vị trí bất kỳ trong LIST
+void delete_list(Node **array, int pos)
+{
+    // Con trỏ tạm để thao tác với danh sách
+    Node *p = *array;
 
+    // Nếu danh sách trống thì không làm gì và thoát
+    if (*array == NULL)
+        return;
+
+    // Xóa node đầu tiên (vị trí pos = 0)
+    if (pos == 0)
+    {
+        *array = p->next;
+        free(p);
+        return;
+    }
+
+    // Duyệt qua danh sách để tìm node đứng trước vị trí cần xóa
+    int i;
+    for (i = 0; p != NULL && i < pos - 1; i++)
+    {
+        p = p->next; // Tiến tới node tiếp theo
+    }
+
+    // Kiểm tra nếu vị trí cần xóa không hợp lệ (vượt quá chiều dài danh sách)
+    if (p == NULL || p->next == NULL)
+        return;
+
+    // Tìm được node cần xóa
+    Node *temp = p->next; // Node tại vị trí cần xóa
+    p->next = temp->next; // Cập nhật liên kết để bỏ qua node cần xóa
+
+    // Giải phóng bộ nhớ của node cần xóa
+    free(temp);
+}
 
 
 
