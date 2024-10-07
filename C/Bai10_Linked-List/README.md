@@ -65,6 +65,7 @@ void push_back(Node **array, int value)
     }
 }    
 ## 2. Hàm xóa 1 node ở cuối LIST
+```
 void pop_back(Node **array)
 {
     Node *p = *array;
@@ -86,7 +87,9 @@ void pop_back(Node **array)
     }
     temp->next = NULL;
 }
+```
 ## 3. Hàm thêm 1 node ở đầu LIST
+```
 void push_front(Node **array, int value)
 {
     Node *new_node = createNode(value);
@@ -105,7 +108,9 @@ void pop_front(Node **array)
     *array = (*array)->next;
     free(temp);
 }
+```
 ## 5. Hàm thêm 1 node vị trí bất kỳ trong LIST
+```
 void insert(Node **array, int value, int pos)
 {
     Node *new_node = createNode(value);
@@ -124,7 +129,9 @@ void insert(Node **array, int value, int pos)
         p->next = new_node;
     }
 }
+```
 ## 6. Hàm xóa 1 node vị trí bất kỳ trong LIST
+```
 void delete_list(Node **array, int pos)
 {
     // Con trỏ tạm để thao tác với danh sách
@@ -160,7 +167,7 @@ void delete_list(Node **array, int pos)
     // Giải phóng bộ nhớ của node cần xóa
     free(temp);
 }
-
+```
 
 
 
