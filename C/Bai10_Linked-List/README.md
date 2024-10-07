@@ -45,6 +45,7 @@
 # Các hàm thường sử dụng trong danh sách liên kết(Liked List)
 
 ## 1. Hàm thêm 1 node ở cuối LIST
+```
 void push_back(Node **array, int value)
 {
     Node *temp = createNode(value);
@@ -63,7 +64,8 @@ void push_back(Node **array, int value)
         }
         p->next = temp;
     }
-}    
+}
+```
 ## 2. Hàm xóa 1 node ở cuối LIST
 ```
 void pop_back(Node **array)
