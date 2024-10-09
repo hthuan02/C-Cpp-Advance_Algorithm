@@ -1,5 +1,5 @@
 <details>
-  <summary># BÀI 10: LIKED LIST</summary>
+  <summary> BÀI 10: LIKED LIST</summary>
 
 
 - Liked list (danh sách liên kết): Là cấu trúc dữ liệu gồm chuổi các node(nút) liên kết với nhau, mỗi node gồm 2 thành phần: Data và con trỏ (*Next).
